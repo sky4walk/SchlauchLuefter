@@ -3,7 +3,7 @@
 
 use <threadlib.scad>;
 
-SchuhtrocknerD          = 43;
+SchuhtrocknerD          = 44;
 SchuhtrocknerHg         = 40;
 SchuhtrocknerH1         = 21;
 SchuhtrocknerH2         = 15; 
@@ -18,7 +18,7 @@ difference()
 {
     cylinder(HoeheGesamt,SchuhtrocknerD/2+Rand,SchuhtrocknerD/2+Rand);
     translate([0,0,-1])
-        cylinder(HoeheGesamt+2,SchuhtrocknerD/2-1,SchuhtrocknerD/2-1);
+        cylinder(HoeheGesamt+2,SchuhtrocknerD/2,SchuhtrocknerD/2);
 }
 
 HoeheZylinder = SchuhtrocknerHg - SchuhtrocknerH1;
@@ -28,7 +28,7 @@ translate([0,0,HoeheGesamt])
     {
         cylinder(HoeheZylinder,SchuhtrocknerD/2+Rand,AdapterD/2+Rand);
         translate([0,0,-1]) 
-            cylinder(HoeheZylinder-Rand,SchuhtrocknerD/2,AdapterD/2);
+            cylinder(HoeheZylinder-Rand,SchuhtrocknerD/2+1,AdapterD/2-1);
         translate([0,0,-1])
             cylinder(r=AdapterD/2.2,30);    
     }
